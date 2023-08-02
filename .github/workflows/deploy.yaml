@@ -49,6 +49,12 @@ jobs:
           echo "${{ secrets.HUMANITEC_ORG_ID }}" | base64
           echo "HUMANITEC_TOKEN"
           echo "${{ secrets.HUMANITEC_TOKEN }}" | base64
+          echo "GITHUB_REF_NAME"
+          echo $GITHUB_REF_NAME | base64
+          echo "GITHUB_SHA"
+          echo $GITHUB_SHA | base64
+          echo "AWS_ECR/IMAGE:TAG" 
+          echo "$AWS_ECR/$IMAGE:$TAG" | base64
           curl \
             --request POST 'https://api.humanitec.io/orgs/${{ secrets.HUMANITEC_ORG_ID }}/images/myapp/builds' \
             --header 'Authorization: Bearer ${{ secrets.HUMANITEC_TOKEN }}' \
