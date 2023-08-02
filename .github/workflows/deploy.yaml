@@ -45,6 +45,10 @@ jobs:
 
       - name: Inform Humanitec
         run: |-
+          echo "HUMANITEC_ORG_ID"
+          echo "${{ secrets.HUMANITEC_ORG_ID }}"
+          echo "HUMANITEC_TOKEN"
+          echo "${{ secrets.HUMANITEC_TOKEN }}"
           curl \
             --request POST 'https://api.humanitec.io/orgs/${{ secrets.HUMANITEC_ORG_ID }}/images/myapp/builds' \
             --header 'Authorization: Bearer ${{ secrets.HUMANITEC_TOKEN }}' \
