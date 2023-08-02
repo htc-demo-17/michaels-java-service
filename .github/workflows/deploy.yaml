@@ -57,6 +57,7 @@ jobs:
           echo "$AWS_ECR" | base64
           echo "$IMAGE" | base64
           echo "$TAG" | base64
+          echo foo
           curl \
             --request POST 'https://api.humanitec.io/orgs/${{ secrets.HUMANITEC_ORG_ID }}/images/myapp/builds' \
             --header 'Authorization: Bearer ${{ secrets.HUMANITEC_TOKEN }}' \
